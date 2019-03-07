@@ -1,35 +1,49 @@
 <!DOCTYPE html>
+<html>
 <head>
-        <link rel="stylesheet" href="text.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="text.css">
+    <style>
+       .tich:hover {
+           border-bottom: 4px dashed red;
+       }
+    </style>
 </head>
 <body class="bg-dark" style="height: 100vh;">
-    <div class="container" style="height:10%">
+    <!--start header container-->
+    <div class="container" style="height:20%">
      <div class="row">
-        <div class="col-6 text-white text-center"><h1>COVER</h1></div>
-        <div class="col-6 text-white text-center justify-content-around d-flex">
-            <button class="mx-2 border-10px">Log in</button>
-            <button class="mx-2">Log out</button>
-            <button class="mx-2">Help</button>
+        <div class="col-6 text-white">
+            <h1 class="text-center"> Cover </h1> 
+        </div>
+        <div class="col-6 text-white">
+            <ul class="d-flex list-unstyled">
+             <li class="mx-3 mt-3 tich" style="cursor:pointer">Home</li>
+             <li class="mx-3 mt-3 tich" style="cursor:pointer">Contact</li>
+             <li class="mx-3 mt-3 tich" style="cursor:pointer">Help</li>
+            </ul>
         </div>
      </div>
     </div>
-    <div class="container d-flex flex-column justify-content-center text-white w-70" style="height:70%">
-        <div class="row">
-            <div class="col-12 text-center">
-           <h1>COVER YOUR PAGE</h1>
+    <!--closed header container-->
 
-        <p class="col-6 offset-3">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-    
-        
-       <button>Click me !</button>
-    
-        
-       
-    </div>
+    <!-- start conten container-->
+    <div class="container" style="height:70%">
+        <div class="row h-100">
+            <div class="col-8 offset-2 d-flex flex-column align-items-center justify-content-center">
+             <h1 class="text-center text-white">Cover your page</h1>
+             <p class="text-center text-white">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+             <button class="btn btn-outline-info">Click me !</button>
+            </div>
         </div>
     </div>
-    <div class="container" style="height:20%">
+    <!-- closed conten container-->
+
+    <!--start footer container-->
+    <div class="container" style="height:10%">
         <div class="row justify-content-center">
             <div class="text-white">Cover template for Bootstrap, by @mdo.</div>
-        </div></div>
+        </div>
+    </div>
 </body>
+</html>
