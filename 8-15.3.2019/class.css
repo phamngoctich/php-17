@@ -1,0 +1,16 @@
+
+.Bg-image-1{
+    background-image: url(./123.jpg)
+    }
+.Bg-image-2{
+    background-image: url(./456.jpg)
+}
+.Bg-image-3{
+    background-image: url(./789.jpg)
+}
+.Image{
+    height: 200px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
