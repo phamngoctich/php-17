@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <style>
+    table {
+        border-collapse: collapse;
+    }
+    </style>
+    <body>
+       <table>
+           <thead>
+               <td>NAME</td>
+               <td>Age</td>
+           </thead>
+           <tbody>
+                <th id="name"></th>
+                <th id="age"></th>
+               <script>
+                   var names = ["MAN", 12, "NAM", 18, "HUNG", 23];
+                   for (var i=0, i< names.length, i++) {
+                   document.getElementById("name").innerHTML += names[i];}
+
+               </script>
+           </tbody>
+       </table> 
+    </body>
+</html>
