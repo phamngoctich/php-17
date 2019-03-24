@@ -1,17 +1,43 @@
 <!DOCTYPE html>
 <html>
     <head>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
     <body>
  <div id="div1">
-     <p>para 1</p>
-     <p>para 2</p>
+     <p id="p1">Para 1</p>
+     <p id="p2">Para 2</p>
+     <p id="p3"></p>
 </div>
-    <script>
-    var para = document.createElement("h1");
-    var node = document.createTextNode("day la H1");
-    para.appendChild(node);
-    var element=document.getElementById("div1");
+<button id="befor">thêm h1 vào trước</button>
+<button id="beween">thêm h1 vào giữa</button>
+<button id="after">thêm h1 vào cuối</button>
+
+
+<script>        
+$(document).ready(function(){
+  var para = document.createElement("h1");
+  var node = document.createTextNode("Day la H1");
+  para.appendChild(node);
+  var list = document.getElementById("div1");
+ console.log(list);
+  $("#befor").click(function(){
+  list.insertBefore(para,p1);
+  });
+  
+  $("#beween").click(function(){
+  list.insertBefore(para,p2);
+  });
+  
+  $("#after").click(function(){
+  var list = document.getElementById("div1");
+  list.insertBefore(para, p3);
+  });
+});        
+ //   var para = document.createElement("h1");
+ //   var node = document.createTextNode("day la H1");
+ //   para.appendChild(node);
+ //   var element=document.getElementById("div1");
 
     </script>
     </body>

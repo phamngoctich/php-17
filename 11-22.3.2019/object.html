@@ -1,36 +1,60 @@
-<!DOCTYPE html>>
+<!DOCTYPE html>
 <html>
-    <head></head>
-    <style></style>
+    <head>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+                }
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            }
+    </style>
+    </head>
+    
     <body>
         <table>
             <thead>
                 <td>Brand</td>
                 <td>Prime</td>
-                <td>Madein</td>
-                <td>Camera-spec</td>
+                <td>Made in</td>
+                <td>Camera spec</td>
             </thead>
-            <tbody id="tableValue">
-
-            </tbody>
+            
+            <tbody id="tableValue"></tbody>
 
         </table>
         <script>
-        var cellphone = [
-         "sony" = {
+        var cellphone = {
+         "sony" : {
             "price": 500,
-            "made in" : Malaysia,
+            "made in" : "Malaysia",
             "camera" : 12 
-        }
-         "samsung" = {
+        },
+         "samsung" : {
             "price": 800,
-            "made in" : Vietnam,
+            "made in" : "Vietnam",
             "camera" : 20.4 
-        }]
-for (i=0, i<){
+        }};
 
-}
+    var hang = document.getElementById("tableValue");
+    var a = Object.keys(cellphone);
+    console.log(a[0]);
 
-        </script>
-    </body>
+for (var i = 0; i < a.lenght; i++ ){
+   var tr = document.createElement("tr");
+//for (var j = i*4; j < (i*4)+ 4; j++){
+   var td = document.createElement("td");
+   var data = document.createTextNode(a[i]);  
+   td.appendChild(data);
+   tr.appendChild(td);}
+   hang.appendChild(tr);
+    
+//};
+</script>
+</body>
 </html>

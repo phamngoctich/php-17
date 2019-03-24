@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <style>
 table, th, td {border: 1px blue solid ;
 border-collapse :collapse ;}
 </style>
     </head>
     <body>
-        <table>
+        <table style="width=100%"">
+            <caption>Danh sach hoc vien</caption>
             <thead>
                 <tr>
                     <th>STT</th>
@@ -23,12 +25,18 @@ border-collapse :collapse ;}
                 </tr>
             </tbody>
         </table>
+        <button id="them">Kích vào đây để thêm</button>
     <script>
-    var tableA = document.getElementById("table-body");
-    for(var i=0; i<100; i++){
-        tableA.innerHTML=tableA.innerHTML+"<tr><th>1</th><td>Nam</td><td>25</td></tr>"
+    $(document).ready(function(){
+        $("#them").click(function(){
+            var tableA = document.getElementById("table-body");
+            for(var i=0; i<10; i++){
+            tableA.innerHTML=tableA.innerHTML+"<tr><th>1</th><td>Nam</td><td>25</td></tr>"
     
-    }
+    };
+        });
+    });
+    
     </script>
     </body>
 </html>

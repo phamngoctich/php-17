@@ -1,29 +1,46 @@
 <!DOCTYPE html>
 <html>
     <head>
-
-    </head>
     <style>
     table {
         border-collapse: collapse;
+        width: 100%;
+    }
+    td,
+    th {
+        border: 1px solid black;
+        text-align: center;
+        padding: 2px;
     }
     </style>
+    </head>
     <body>
+    <h3>HTML table</h3>
        <table>
            <thead>
-               <td>NAME</td>
-               <td>Age</td>
+               <tr>
+                   <td>NAME</td>
+                   <td>Age</td>
+                </tr>
            </thead>
-           <tbody>
-                <th id="name"></th>
-                <th id="age"></th>
-               <script>
-                   var names = ["MAN", 12, "NAM", 18, "HUNG", 23];
-                   for (var i=0, i< names.length, i++) {
-                   document.getElementById("name").innerHTML += names[i];}
+           <tbody id="bodyValue"></tbody>
+                
+        <script>
+            var names = ["MAN", 12, "NAM", 18, "HUNG", 23];
+            var tableBody = document.getElementById("bodyValue");
+            console.log(tableBody);
+            for (var i = 0; i < names.length / 2; i++) {
+                var tr = document.createElement("tr");
+                for (var j = i * 2; j < (i*2)+2; j++){
+                var td = document.createElement("td");
+                var data = document.createTextNode(names[j]);
+                td.appendChild(data);
+                tr.appendChild(td);}
+                tableBody.appendChild(tr);
+                };
 
-               </script>
-           </tbody>
+                   
+        </script>
        </table> 
     </body>
 </html>

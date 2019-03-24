@@ -13,21 +13,48 @@
             $("h1").attr("style", "color:red");
                 });
                 });
+    
+                var x = 0 ;
     $(document).ready(function(){
         $("#change").click(function(){
             var a = $("#img");
-            console.log(a.attr("src").includes("1000"));
-           if (a.attr("src").includes("1000")){
+            
+           if (x === 0){
                a.attr("src", "./com-suon.jpg");
+               x++;
+               document.getElementById("monan").innerHTML = "COM SUON";
            }
            else{
-               if (a.attr("src").includes("2000")){
-                   a.attr
+               if (x === 1){
+                a.attr("src", "./cha-gio.jpg");
+                x++; 
+                document.getElementById("monan").innerHTML = "CHA GIO";   
+               }else{
+                a.attr("src", "./bun-cha.jpg");
+                x=x-2;
+                document.getElementById("monan").innerHTML = "BUN CHA";   
                }
-                   a.attr("src", "./cha-gio.jpg");
-           }
-        });
-    });                        
+               }
+                   
+           });
+        }); 
+    
+        var i = 0 ;
+    $(document).ready(function(){
+    $("#doimauchu").click(function(){
+        
+        if (i === 0){
+            $("h1").attr("style", "color:red");
+            i++;   
+        }else{
+            $("h1").attr("style", "color:yellow");
+            i--;}
+    });
+    });
+    
+
+
+                          
 </script>
 </head>
 
@@ -35,11 +62,13 @@
 <body>
     <h1>BBBB</h1>
     <h1>AAA</h1>
+    <h2 id="monan">BUN CHA</h2>
     <img id="img" src="./bun-cha.jpg" alt="bun cha">
 
-    <button id="xanh">Click =>XANH</button>
-    <button id="do">Click => DO</button>
-    <button id="change">Click vào đây để đổi món</button>
+    <button id="xanh">XANH</button>
+    <button id="do">DO</button>
+    <button id="doimauchu">Do-VANG</button>
+    <button id="change">Đổi món</button>
 
 </body>
 </html>
