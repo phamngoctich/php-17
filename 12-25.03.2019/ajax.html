@@ -1,0 +1,94 @@
+<!-- <!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <h1 id="brand"></h1>
+        <script>
+        function loadData(){
+            var home = new XMLHttpRequest();
+            home.open('GET', './data.json');
+            home.send();
+            
+            home.onreadystatechange = function (){
+                if (home.readyState === 4){
+                    document.getElementById('brand').innerHTML = JSON.parse(home.responseText).sony
+                    
+                }
+            }
+        }
+        
+    loadData();
+        </script>
+        
+    </body>
+</html> -->
+<!DOCTYPE html>
+<html>
+    <head>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+                }
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            }
+    </style>
+    </head>
+    
+    <body>
+        <table>
+            <thead>
+                <td>Brand</td>
+                <td>Price</td>
+                <td>Made in</td>
+                <td>Camera spec</td>
+            </thead>
+            
+            <tbody id="brand"></tbody>
+
+        </table>
+        <script>
+            function loadData(){
+            var home = new XMLHttpRequest();
+            home.open('GET', './data.json');
+            home.send();
+            
+            home.onreadystatechange = function (){
+                if (home.readyState === 4){
+                    document.getElementById('brand').innerHTML = JSON.parse(home.responseText).sony.price;
+                    
+                }
+            }
+        }
+        
+    loadData();
+
+        
+//     var hang = document.getElementById("tableValue");
+//     var a = Object.keys(cellphone);
+    
+// for (var i = 0; i < a.length; i++ ){
+    
+//    var tr = document.createElement("tr");
+
+//    var td = document.createElement("td");
+//    var data = document.createTextNode(a[i]);  
+//    td.appendChild(data);
+//    tr.appendChild(td);
+   
+
+//    var td = document.createElement("td");
+//    var data = document.createTextNode(cellphone[a[i]].price);  
+//    td.appendChild(data);
+//    tr.appendChild(td);
+   
+//    hang.appendChild(tr);    
+// };
+</script>
+</body>
+</html>

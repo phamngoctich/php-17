@@ -20,7 +20,7 @@
         <table>
             <thead>
                 <td>Brand</td>
-                <td>Prime</td>
+                <td>Price</td>
                 <td>Made in</td>
                 <td>Camera spec</td>
             </thead>
@@ -43,18 +43,28 @@
 
     var hang = document.getElementById("tableValue");
     var a = Object.keys(cellphone);
-    console.log(a[0]);
-
-for (var i = 0; i < a.lenght; i++ ){
+    // console.log(a);
+    // console.log(typeof a);
+    // console.log(cellphone.sony.price);
+    
+    // console.log(a.length);
+for (var i = 0; i < a.length; i++ ){
+    
    var tr = document.createElement("tr");
-//for (var j = i*4; j < (i*4)+ 4; j++){
+
    var td = document.createElement("td");
    var data = document.createTextNode(a[i]);  
    td.appendChild(data);
-   tr.appendChild(td);}
-   hang.appendChild(tr);
-    
-//};
+   tr.appendChild(td);
+   
+
+   var td = document.createElement("td");
+   var data = document.createTextNode(cellphone[a[i]].price);  
+   td.appendChild(data);
+   tr.appendChild(td);
+   
+   hang.appendChild(tr);    
+};
 </script>
 </body>
 </html>
