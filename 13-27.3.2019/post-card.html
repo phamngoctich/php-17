@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../bootstrap.min.css"> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <button id="loadData">Load DATA</button>
+        <div id="cardContend" class="card" style="width: 18rem;">
+                 <img id="img" src="..." class="card-img-top">
+                 <div class="card-body">
+                   <h5 id="cadrtitle" class="card-title">Card title</h5>
+                   <p id="cardtext" class="card-text">Some quick example text</p>
+                   <a href="#" class="btn btn-primary">Go somewhere</a>
+                 </div>
+             </div>        
+
+        <script>
+            function loadData(){
+                var http = new XMLHttpRequest();
+                http.open('GET', './post.json');
+                http.send();
+                http.onreadystatechange = function(){
+                    if (http.readyState === 4){
+                        console.log(http.readyState);
+                        var rawData = http.responseText;
+                        console.log(rawData);
+                        var data = JSON.parse(rawData);
+                        var cardContend = document.getElementById("cardContend");
+                       $(document).ready(function(){
+                           $("#loadData").click(function(){
+                               var a = $("#img");
+                               a.attr("src", "data[0].image-url");
+                           })
+                       })
+                        
+                    }
+                }
+            }
+
+                        
+                
+                       
+
+        </script> 
+
+        
+
+    </body>
+</html>

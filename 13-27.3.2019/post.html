@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <link rel="stylesheet" href="../bootstrap.min.css"> 
+    </head>
+    <body>
+        <button onclick="loadData()">Load DATA</button>
+
+        <table>
+            <thead>
+                <tr>
+                    <td>Title</td>
+                    <td>Description</td>
+                    <td>Image_url</td>
+                    <td>Categories 1</td>
+                    <td>Categories 2</td>
+                </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+        </table>
+
+        <script>
+           function loadData(){
+               var http = new XMLHttpRequest();
+               http.open('GET', './post.json');
+               http.send();
+               http.onreadystatechange = function(){
+                   if (http.readyState === 4){
+                       var rawData = http.responseText;
+                       var data = JSON.parse(rawData);
+                       var tableBody = document.getElementById("tableBody");
+    for (var i = 0; i<data.length ; i++){                   
+                       var tr = document.createElement("tr");
+                       
+                       var td = document.createElement("td");
+                       var Title = document.createTextNode(data[i].title);
+                       td.appendChild(Title);
+                       tr.appendChild(td);
+
+                       var td = document.createElement("td");
+                       var Description = document.createTextNode(data[i].description);
+                       td.appendChild(Description);
+                       tr.appendChild(td);
+
+                       var td = document.createElement("td");
+                       var Image_url = document.createTextNode(data[i].image_url);
+                       td.appendChild(Image_url);
+                       tr.appendChild(td);
+
+            for (var j = 0; j < data[i].categories.length; j++) {           
+                       var td = document.createElement("td");
+                       var Categories = document.createTextNode(data[i].categories[j]);
+                       td.appendChild(Categories);
+                       tr.appendChild(td);}
+
+                       tableBody.appendChild(tr);}
+
+                       
+                       
+
+                   }
+               }
+           }
+        </script>
+
+    </body>
+</html>
